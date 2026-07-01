@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>تطبيق حروف الجر في اللغة الإنجليزية</title>
+<style>
+:root{
+  --navy:#061f4a;--blue:#0b72d9;--green:#168443;--purple:#7836a3;--orange:#f06b12;--pink:#e94574;--gold:#d9aa32;--bg:#f7fbff;--ink:#12213f;--muted:#60708d;--card:#ffffffcc;
+  --shadow:0 18px 45px rgba(6,31,74,.16);--soft:0 10px 25px rgba(6,31,74,.10);
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:"Tahoma","Arial",sans-serif;background:radial-gradient(circle at top,#fff 0,#f2f8ff 45%,#eef6ff 100%);color:var(--ink);line-height:1.8;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;background-image:linear-gradient(120deg,rgba(11,114,217,.05),transparent 40%),radial-gradient(circle at 10% 20%,rgba(217,170,50,.12),transparent 24%),radial-gradient(circle at 88% 15%,rgba(22,132,67,.10),transparent 22%),radial-gradient(circle at 75% 85%,rgba(240,107,18,.10),transparent 22%);pointer-events:none;z-index:-1}
+.container{max-width:1180px;margin:auto;padding:22px}.hero{position:relative;min-height:92vh;display:grid;grid-template-columns:1.05fr .95fr;gap:28px;align-items:center;padding:28px 0}.brand{display:flex;align-items:center;gap:16px;margin-bottom:18px}.logo{width:92px;height:92px;border-radius:50%;object-fit:cover;background:#fff;padding:7px;box-shadow:inset 0 0 0 3px #fff,0 12px 30px rgba(6,31,74,.25);border:2px solid rgba(217,170,50,.65)}.badge{display:inline-flex;align-items:center;gap:8px;padding:8px 15px;border-radius:999px;background:linear-gradient(135deg,#fff,#eef6ff);box-shadow:var(--soft);font-weight:800;color:var(--navy);border:1px solid rgba(11,114,217,.12)}h1{font-size:clamp(32px,5vw,64px);line-height:1.25;margin:0 0 16px;color:var(--navy);text-shadow:0 5px 0 rgba(6,31,74,.08)}.lead{font-size:clamp(17px,2vw,22px);color:#243a65;margin:0 0 24px}.actions{display:flex;flex-wrap:wrap;gap:12px}.btn{border:0;border-radius:18px;padding:13px 20px;font-weight:900;font-size:16px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:.25s;box-shadow:var(--soft);font-family:inherit}.btn.primary{background:linear-gradient(135deg,var(--navy),#0a5bb8);color:#fff}.btn.light{background:#fff;color:var(--navy);border:1px solid rgba(6,31,74,.12)}.btn:hover{transform:translateY(-3px);box-shadow:0 20px 35px rgba(6,31,74,.18)}
+.stage{position:relative;min-height:520px;perspective:900px}.orb{position:absolute;border-radius:30px;background:linear-gradient(145deg,#fff,#ecf5ff);box-shadow:var(--shadow);border:1px solid #fff;transform:rotateX(7deg) rotateY(-9deg);padding:20px}.orb.center{inset:70px 60px auto auto;width:360px;min-height:360px;border-radius:44px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}.big-prep{font-size:104px;font-weight:1000;color:var(--navy);line-height:1;text-shadow:0 8px 0 rgba(11,114,217,.12)}.mini{color:var(--muted);font-weight:800}.floating{position:absolute;border-radius:25px;background:linear-gradient(145deg,#fff,#f8fbff);box-shadow:var(--soft);padding:14px 18px;font-weight:900;color:var(--navy);animation:float 4s ease-in-out infinite}.f1{top:35px;left:20px}.f2{top:120px;right:10px;animation-delay:.7s}.f3{bottom:60px;left:70px;animation-delay:1.2s}.f4{bottom:12px;right:160px;animation-delay:1.7s}@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}.spark{position:absolute;width:14px;height:14px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 9px rgba(217,170,50,.15);animation:pulse 1.8s infinite}.s1{right:50px;top:40px}.s2{left:40px;bottom:160px}.s3{right:180px;bottom:40px}@keyframes pulse{50%{transform:scale(1.4);opacity:.55}}
+.section-title{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:28px 0 16px}.section-title h2{margin:0;color:var(--navy);font-size:clamp(24px,3vw,38px)}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:var(--card);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.85);border-radius:28px;box-shadow:var(--shadow);padding:20px;position:relative;overflow:hidden}.card:before{content:"";position:absolute;inset:0 0 auto;height:8px;background:var(--c,var(--blue))}.prep{display:flex;align-items:center;justify-content:space-between;gap:12px}.prep .word{font-size:42px;font-weight:1000;color:var(--c,var(--blue));direction:ltr}.pill{background:rgba(6,31,74,.06);border-radius:14px;padding:7px 12px;font-weight:900}.card p{margin:10px 0;color:#263b63}.examples{display:grid;gap:8px;margin-top:12px}.ex{direction:ltr;text-align:left;background:#fff;border:1px solid rgba(6,31,74,.08);border-radius:15px;padding:9px 11px;display:flex;align-items:center;justify-content:space-between;gap:10px;box-shadow:0 4px 10px rgba(6,31,74,.05);font-weight:700}.speak{border:0;background:linear-gradient(135deg,#edf6ff,#fff);border-radius:12px;padding:7px 9px;cursor:pointer;color:var(--navy);box-shadow:0 3px 8px rgba(6,31,74,.08)}.tabs{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0 18px}.tab{border:1px solid rgba(6,31,74,.12);background:#fff;border-radius:999px;padding:10px 16px;font-weight:900;cursor:pointer;color:var(--navy);font-family:inherit}.tab.active{background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff}.lesson-panel{display:none}.lesson-panel.active{display:block}.map-list{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.mini-card{border-radius:20px;background:#fff;box-shadow:var(--soft);padding:14px;border:1px solid rgba(6,31,74,.08)}.mini-card b{color:var(--orange);font-size:22px;direction:ltr;display:inline-block}.rule{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.rule .card{padding:18px}.quiz{display:grid;grid-template-columns:.85fr 1.15fr;gap:18px}.quiz-box{min-height:390px}.progress{height:12px;background:rgba(6,31,74,.08);border-radius:999px;overflow:hidden;margin:10px 0 18px}.bar{height:100%;width:0;background:linear-gradient(90deg,var(--green),var(--blue));border-radius:inherit;transition:.3s}.q-title{font-size:24px;font-weight:1000;color:var(--navy);margin:0 0 12px}.options{display:grid;gap:10px}.option{padding:13px 15px;background:#fff;border:2px solid rgba(6,31,74,.08);border-radius:17px;cursor:pointer;font-weight:900;transition:.2s;text-align:right;font-family:inherit}.option:hover{transform:translateX(-5px);border-color:rgba(11,114,217,.35)}.option.correct{background:#eaf9f0;border-color:#1aa45a}.option.wrong{background:#fff0f0;border-color:#e24a4a}.feedback{font-weight:900;margin:14px 0;color:var(--navy);min-height:32px}.score{font-size:44px;font-weight:1000;color:var(--navy);text-align:center}.table{width:100%;border-collapse:separate;border-spacing:0 9px}.table td{background:#fff;padding:10px;border-top:1px solid rgba(6,31,74,.08);border-bottom:1px solid rgba(6,31,74,.08)}.table td:first-child{border-radius:0 12px 12px 0;border-right:1px solid rgba(6,31,74,.08);font-weight:1000;color:var(--navy);direction:ltr}.table td:last-child{border-radius:12px 0 0 12px;border-left:1px solid rgba(6,31,74,.08)}footer{text-align:center;margin:34px 0 16px;color:var(--navy);font-weight:1000}.footer-card{background:#fff;border:1px solid rgba(6,31,74,.10);border-radius:24px;padding:18px;box-shadow:var(--soft);display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap}.small-logo{width:58px;height:58px;border-radius:50%;object-fit:cover;padding:4px;background:#fff;border:2px solid rgba(217,170,50,.7)}.print-note{font-size:14px;color:var(--muted);font-weight:700}@media(max-width:900px){.hero{grid-template-columns:1fr}.stage{min-height:430px}.orb.center{position:relative;inset:auto;width:100%;min-height:260px}.floating{position:relative;display:inline-block;margin:8px}.grid,.map-list,.rule,.quiz{grid-template-columns:1fr}h1{text-align:center}.brand,.actions{justify-content:center}.lead{text-align:center}.section-title{align-items:flex-start;flex-direction:column}}@media print{.actions,.tabs,.quiz .card:first-child{display:none}body{background:#fff}.card{box-shadow:none;border:1px solid #ddd}.container{max-width:none}}
+</style>
+</head>
+<body>
+<div class="container">
+  <section class="hero" id="top">
+    <div>
+      <div class="brand"><img src="assets/logo.png" class="logo" alt="شعار ملتقى التعليم التفاعلي"><span class="badge">ملتقى التعليم التفاعلي</span></div>
+      <h1>تطبيق تفاعلي لحروف الجر في اللغة الإنجليزية</h1>
+      <p class="lead">شرح واضح، أمثلة تُقرأ صوتيًا، تدريب لكل حرف، واختبار لكل فكرة؛ ليصبح التفريق بين <b>in</b> و <b>on</b> و <b>at</b> وبقية الحروف أسهل وأمتع.</p>
+      <div class="actions"><a class="btn primary" href="#lessons">ابدأ التعلم</a><a class="btn light" href="#quiz">ابدأ الاختبار</a><button class="btn light" onclick="window.print()">طباعة الملخص</button></div>
+    </div>
+    <div class="stage" aria-hidden="true">
+      <span class="spark s1"></span><span class="spark s2"></span><span class="spark s3"></span>
+      <div class="orb center"><div class="mini">Prepositions</div><div class="big-prep">in</div><div class="mini">مكان • زمان • مدة</div></div>
+      <div class="floating f1">on = سطح / يوم</div><div class="floating f2">at = نقطة محددة</div><div class="floating f3">for = لمدة</div><div class="floating f4">since = منذ</div>
+    </div>
+  </section>
+
+  <section id="lessons">
+    <div class="section-title"><h2>أولًا: الدروس التفاعلية</h2><span class="badge">اضغطي على زر الصوت لسماع المثال</span></div>
+    <div class="tabs" id="tabs"></div>
+    <div id="panels"></div>
+  </section>
+
+  <section id="rules">
+    <div class="section-title"><h2>قاعدة سهلة للحفظ</h2><span class="badge">ملخص سريع</span></div>
+    <div class="rule">
+      <div class="card" style="--c:var(--green)"><div class="prep"><span class="word">in</span><span class="pill">داخل / واسع / زمن طويل</span></div><p>نستخدمها مع الأماكن الكبيرة أو داخل الشيء، ومع الشهور والسنوات والفصول وأجزاء اليوم، وأحيانًا بمعنى بعد مدة قادمة.</p></div>
+      <div class="card" style="--c:var(--blue)"><div class="prep"><span class="word">on</span><span class="pill">سطح / يوم / تاريخ</span></div><p>نستخدمها عندما يكون الشيء على سطح، ومع أسماء الشوارع، والأيام، والتواريخ، والمناسبات.</p></div>
+      <div class="card" style="--c:var(--orange)"><div class="prep"><span class="word">at</span><span class="pill">نقطة محددة</span></div><p>نستخدمها مع الوقت المحدد، والمكان المحدد، والنقطة المعروفة مثل الباب أو المطار أو المدرسة.</p></div>
+    </div>
+  </section>
+
+  <section id="around">
+    <div class="section-title"><h2>حروف تدل على المكان حول الشيء</h2><span class="badge">بطاقات سريعة</span></div>
+    <div class="map-list" id="aroundList"></div>
+  </section>
+
+  <section id="quiz">
+    <div class="section-title"><h2>ثانيًا: الاختبار التفاعلي</h2><span class="badge">اختبار لكل فكرة ولكل حرف</span></div>
+    <div class="quiz">
+      <div class="card">
+        <h3 style="margin-top:0;color:var(--navy)">اختاري نوع الاختبار</h3>
+        <div class="options" id="quizTypes"></div>
+        <p class="print-note">بعد كل إجابة تظهر النتيجة مباشرة مع التوضيح، وفي النهاية تظهر الدرجة.</p>
+      </div>
+      <div class="card quiz-box" id="quizBox"></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-card"><img src="assets/logo.png" class="small-logo" alt="الشعار"><div>إعداد: أ/ فاطمة هزازي — ملتقى التعليم التفاعلي</div></div>
+  </footer>
+</div>
+
+<script>
+const lessonGroups = [
+ {id:'place', title:'مع الأماكن', color:'var(--green)', icon:'📍', items:[
+  {word:'in', use:'للأماكن الكبيرة أو داخل الشيء', note:'قارات، دول، مدن، أو شيء داخل صندوق/حقيبة/غرفة.', examples:['in Asia','in Egypt','in Jeddah','in the bag']},
+  {word:'on', use:'للشوارع أو على السطح', note:'سطح شيء أو شارع/طريق.', examples:['on Tahlia Street','on the wall','on the chair','on the floor']},
+  {word:'at', use:'للمكان المحدد', note:'نقطة أو موقع محدد.', examples:['at the hospital','at the airport','at the door','at the bus stop']}
+ ]},
+ {id:'time', title:'مع الأزمنة', color:'var(--blue)', icon:'🗓️', items:[
+  {word:'in', use:'للشهور والسنوات والفصول وأجزاء اليوم', note:'فترات زمنية طويلة أو عامة.', examples:['in January','in 2025','in winter','in the morning']},
+  {word:'on', use:'للأيام والتواريخ والمناسبات', note:'يوم محدد أو تاريخ محدد.', examples:['on Monday','on March 5th','on Eid','on National Day']},
+  {word:'at', use:'للوقت المحدد', note:'ساعة أو وقت دقيق.', examples:['at 7:00 am','at sunrise','at lunchtime','at midnight']}
+ ]},
+ {id:'duration', title:'المدة والزمن', color:'var(--purple)', icon:'⏳', items:[
+  {word:'since', use:'منذ + بداية زمن', note:'نذكر معها نقطة بداية محددة.', examples:['since 2020','since yesterday','since morning','since last month']},
+  {word:'for', use:'لمدة + فترة كاملة', note:'نذكر معها طول المدة.', examples:['for one hour','for three days','for a week','for two years']},
+  {word:'by', use:'بحلول / في موعد أقصاه', note:'تدل على موعد نهائي لإنجاز الشيء.', examples:['by tomorrow','by 8 o’clock','by next week','by the end of the day']},
+  {word:'in', use:'بعد مدة قادمة', note:'تدل على حدوث شيء بعد مرور مدة.', examples:['in two hours','in a week','in ten minutes','in a few days']}
+ ]}
+];
+const around = [
+ ['inside','داخل','The cat is inside the box.'],['outside','خارج','The students are outside the classroom.'],['beside','بجانب','The bag is beside the desk.'],['next to','بجانب مباشرة','The chair is next to the table.'],['near','قريب من','The mosque is near the school.'],['above','فوق','The clock is above the board.'],['below','أسفل','The picture is below the shelf.'],['under','تحت','The pen is under the book.'],['between','بين','The desk is between two chairs.']
+];
+function speak(text){
+  if(!('speechSynthesis' in window)){alert('خاصية القراءة الصوتية غير مدعومة في هذا المتصفح.');return}
+  speechSynthesis.cancel(); const u=new SpeechSynthesisUtterance(text); u.lang='en-US'; u.rate=.82; speechSynthesis.speak(u);
+}
+function makeLessons(){
+ const tabs=document.getElementById('tabs'), panels=document.getElementById('panels');
+ lessonGroups.forEach((g,i)=>{
+  const b=document.createElement('button'); b.className='tab'+(i?'':' active'); b.textContent=g.icon+' '+g.title; b.onclick=()=>showPanel(g.id,b); tabs.appendChild(b);
+  const panel=document.createElement('div'); panel.className='lesson-panel'+(i?'':' active'); panel.id='panel-'+g.id;
+  panel.innerHTML=`<div class="grid">${g.items.map(it=>`<article class="card" style="--c:${g.color}"><div class="prep"><span class="word">${it.word}</span><span class="pill">${it.use}</span></div><p>${it.note}</p><div class="examples">${it.examples.map(ex=>`<div class="ex"><span>${ex}</span><button class="speak" onclick="speak('${ex.replaceAll("'","\\'")}')">🔊</button></div>`).join('')}</div><button class="btn light" style="margin-top:12px" onclick="startQuiz('${it.word}-${g.id}')">اختبار ${it.word}</button></article>`).join('')}</div>`;
+  panels.appendChild(panel);
+ });
+}
+function showPanel(id,btn){document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));btn.classList.add('active');document.querySelectorAll('.lesson-panel').forEach(p=>p.classList.remove('active'));document.getElementById('panel-'+id).classList.add('active')}
+function makeAround(){document.getElementById('aroundList').innerHTML=around.map(a=>`<div class="mini-card"><b>${a[0]}</b> = ${a[1]}<div class="ex" style="margin-top:8px"><span>${a[2]}</span><button class="speak" onclick="speak('${a[2].replaceAll("'","\\'")}')">🔊</button></div><button class="btn light" style="margin-top:10px;padding:8px 12px" onclick="startQuiz('${a[0]}')">اختبار ${a[0]}</button></div>`).join('')}
+const quizSets={
+ 'الفكرة: الأماكن':[ ['I live ___ Jeddah.','in',['in','on','at'],'نستخدم in مع المدن.'], ['The picture is ___ the wall.','on',['in','on','at'],'نستخدم on للسطح.'], ['She is waiting ___ the door.','at',['in','on','at'],'نستخدم at للنقطة المحددة.'] ],
+ 'الفكرة: الأزمنة':[ ['The lesson starts ___ 8:00 am.','at',['in','on','at'],'نستخدم at مع الساعة.'], ['We travel ___ Friday.','on',['in','on','at'],'نستخدم on مع الأيام.'], ['It is hot ___ summer.','in',['in','on','at'],'نستخدم in مع الفصول.'] ],
+ 'الفكرة: المدة والزمن':[ ['She has studied English ___ 2020.','since',['since','for','by','in'],'since مع بداية زمن محددة.'], ['I waited ___ ten minutes.','for',['since','for','by','in'],'for مع مدة كاملة.'], ['Finish your homework ___ 9 o’clock.','by',['since','for','by','in'],'by تعني في موعد أقصاه.'], ['The train will arrive ___ two hours.','in',['since','for','by','in'],'in هنا بمعنى بعد مدة قادمة.'] ],
+ 'المكان حول الشيء':[ ['The cat is ___ the box.','inside',['inside','outside','above','between'],'inside = داخل.'], ['The pen is ___ the book.','under',['near','under','outside','beside'],'under = تحت.'], ['The clock is ___ the board.','above',['above','below','inside','between'],'above = فوق.'], ['The desk is ___ two chairs.','between',['near','between','under','outside'],'between = بين.'] ],
+ 'تحدي شامل':[ ['We met ___ the airport.','at',['in','on','at','for'],'at للمكان المحدد.'], ['My birthday is ___ March 5th.','on',['in','on','at','by'],'on مع التاريخ.'], ['I have lived here ___ three years.','for',['for','since','by','in'],'for مع مدة كاملة.'], ['Submit the project ___ tomorrow.','by',['at','by','in','since'],'by تعني بحلول/موعد أقصى.'], ['The school is ___ the mosque.','near',['near','inside','above','between'],'near = قريب من.'] ]
+};
+const perLetter={
+ 'in-place':[['The keys are ___ the bag.','in',['in','on','at'],'in = داخل الشيء.'],['She lives ___ Egypt.','in',['at','on','in'],'in مع الدول.']],
+ 'on-place':[['The book is ___ the table.','on',['in','on','at'],'on = على السطح.'],['The shop is ___ Tahlia Street.','on',['on','at','in'],'on مع الشوارع.']],
+ 'at-place':[['He is ___ the bus stop.','at',['in','on','at'],'at مع نقطة محددة.'],['Meet me ___ the door.','at',['at','in','on'],'at عند الباب.']],
+ 'in-time':[['We study ___ the morning.','in',['in','on','at'],'in مع أجزاء اليوم.'],['The course begins ___ January.','in',['at','on','in'],'in مع الشهور.']],
+ 'on-time':[['The exam is ___ Monday.','on',['in','on','at'],'on مع الأيام.'],['We celebrate ___ Eid.','on',['at','on','in'],'on مع المناسبات.']],
+ 'at-time':[['The class starts ___ noon.','at',['in','on','at'],'at مع أوقات محددة.'],['Call me ___ 7:00 pm.','at',['at','on','in'],'at مع الساعة.']],
+ 'since-duration':[['I have known her ___ yesterday.','since',['since','for','by','in'],'since مع بداية زمن.']],
+ 'for-duration':[['They played ___ one hour.','for',['since','for','by','in'],'for مع مدة كاملة.']],
+ 'by-duration':[['Please arrive ___ 8 o’clock.','by',['since','for','by','in'],'by = في موعد أقصاه.']],
+ 'in-duration':[['I will be ready ___ ten minutes.','in',['since','for','by','in'],'in = بعد مدة قادمة.']]
+};
+around.forEach(a=>{perLetter[a[0]]=[[a[2].replace(a[0],'___'),a[0],around.map(x=>x[0]).sort(()=>.5-Math.random()).slice(0,4).includes(a[0])?around.map(x=>x[0]).sort(()=>.5-Math.random()).slice(0,4):[a[0],'near','under','between'],'المعنى: '+a[1]]]});
+let current=[],idx=0,score=0,answered=false;
+function makeQuizButtons(){const q=document.getElementById('quizTypes'); q.innerHTML=Object.keys(quizSets).map(k=>`<button class="option" onclick="startQuiz('${k}')">${k}</button>`).join('')+`<button class="option" onclick="startQuiz('تحدي شامل')">ابدأ التحدي الشامل ⭐</button>`; startQuiz('تحدي شامل')}
+function startQuiz(name){
+ current=(quizSets[name]||perLetter[name]||quizSets['تحدي شامل']).map(x=>({q:x[0],a:x[1],ops:[...new Set(x[2])],why:x[3]})); idx=0;score=0;answered=false; document.getElementById('quiz').scrollIntoView({behavior:'smooth'}); renderQ(name)
+}
+function renderQ(name=''){
+ const box=document.getElementById('quizBox'); const total=current.length; if(idx>=total){box.innerHTML=`<div class="score">${score} / ${total}</div><h3 style="text-align:center;color:var(--navy)">أحسنتِ، انتهى الاختبار 🌟</h3><p style="text-align:center">راجعي البطاقات التي أخطأتِ فيها، ثم أعيدي المحاولة.</p><div style="text-align:center"><button class="btn primary" onclick="startQuiz('تحدي شامل')">إعادة التحدي</button></div>`;return}
+ const q=current[idx]; answered=false; box.innerHTML=`<div class="badge">${name}</div><div class="progress"><div class="bar" style="width:${(idx/total)*100}%"></div></div><div class="q-title">${idx+1}) ${q.q}</div><div class="options">${q.ops.map(op=>`<button class="option" onclick="choose(this,'${op.replaceAll("'","\\'")}')">${op}</button>`).join('')}</div><div class="feedback" id="fb"></div><button class="btn primary" id="nextBtn" style="display:none" onclick="idx++;renderQ('${name.replaceAll("'","\\'")}')">السؤال التالي</button>`
+}
+function choose(btn,op){if(answered)return; answered=true; const q=current[idx]; document.querySelectorAll('#quizBox .option').forEach(b=>{if(b.textContent===q.a)b.classList.add('correct')}); if(op===q.a){score++; document.getElementById('fb').textContent='إجابة صحيحة ✅ '+q.why}else{btn.classList.add('wrong'); document.getElementById('fb').textContent='الإجابة الصحيحة: '+q.a+' — '+q.why} document.querySelector('#quizBox .bar').style.width=(((idx+1)/current.length)*100)+'%'; document.getElementById('nextBtn').style.display='inline-flex'}
+makeLessons(); makeAround(); makeQuizButtons();
+</script>
+</body>
+</html>
