@@ -1,0 +1,872 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>تطبيق حروف الجر في اللغة الإنجليزية</title>
+
+<style>
+:root{
+  --navy:#071f49;
+  --blue:#0b73d9;
+  --green:#168443;
+  --purple:#7a35a8;
+  --orange:#ef6b16;
+  --pink:#e84572;
+  --gold:#d8aa35;
+  --ink:#12213f;
+  --muted:#66758f;
+  --shadow:0 18px 45px rgba(7,31,73,.16);
+  --soft:0 8px 24px rgba(7,31,73,.11);
+}
+
+*{box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  font-family:Tahoma,Arial,sans-serif;
+  background:
+    radial-gradient(circle at 15% 18%,rgba(216,170,53,.13),transparent 24%),
+    radial-gradient(circle at 85% 12%,rgba(22,132,67,.10),transparent 25%),
+    radial-gradient(circle at 75% 85%,rgba(239,107,22,.10),transparent 25%),
+    linear-gradient(180deg,#fff,#eef6ff);
+  color:var(--ink);
+  line-height:1.8;
+  overflow-x:hidden;
+}
+
+.container{
+  max-width:1180px;
+  margin:auto;
+  padding:22px;
+}
+
+.hero{
+  min-height:92vh;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:35px;
+  align-items:center;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin-bottom:18px;
+}
+
+.logo{
+  width:98px;
+  height:98px;
+  border-radius:50%;
+  object-fit:cover;
+  background:#fff;
+  padding:5px;
+  border:3px solid var(--gold);
+  box-shadow:var(--shadow);
+}
+
+.badge{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 15px;
+  border-radius:999px;
+  background:#fff;
+  box-shadow:var(--soft);
+  color:var(--navy);
+  font-weight:900;
+  border:1px solid rgba(7,31,73,.08);
+}
+
+h1{
+  margin:0 0 16px;
+  color:var(--navy);
+  font-size:clamp(34px,5vw,64px);
+  line-height:1.25;
+  text-shadow:0 6px 0 rgba(7,31,73,.08);
+}
+
+.lead{
+  font-size:clamp(17px,2vw,22px);
+  color:#263b63;
+  margin:0 0 24px;
+}
+
+.actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+}
+
+.btn{
+  border:0;
+  border-radius:18px;
+  padding:13px 20px;
+  font-weight:900;
+  font-size:16px;
+  cursor:pointer;
+  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  transition:.25s;
+  box-shadow:var(--soft);
+  font-family:inherit;
+}
+
+.btn.primary{
+  background:linear-gradient(135deg,var(--navy),var(--blue));
+  color:#fff;
+}
+
+.btn.light{
+  background:#fff;
+  color:var(--navy);
+  border:1px solid rgba(7,31,73,.12);
+}
+
+.btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 20px 35px rgba(7,31,73,.18);
+}
+
+.stage{
+  position:relative;
+  min-height:520px;
+  perspective:900px;
+}
+
+.orb{
+  position:absolute;
+  border-radius:38px;
+  background:linear-gradient(145deg,#fff,#eaf4ff);
+  box-shadow:var(--shadow);
+  border:1px solid #fff;
+  transform:rotateX(7deg) rotateY(-9deg);
+}
+
+.orb.center{
+  inset:85px 70px auto auto;
+  width:360px;
+  min-height:360px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+
+.big-prep{
+  font-size:105px;
+  font-weight:1000;
+  color:var(--navy);
+  line-height:1;
+  direction:ltr;
+  text-shadow:0 8px 0 rgba(11,115,217,.12);
+}
+
+.mini{
+  color:var(--muted);
+  font-weight:900;
+}
+
+.floating{
+  position:absolute;
+  border-radius:24px;
+  background:#fff;
+  box-shadow:var(--soft);
+  padding:14px 18px;
+  font-weight:900;
+  color:var(--navy);
+  animation:float 4s ease-in-out infinite;
+}
+
+.f1{top:35px;left:20px}
+.f2{top:130px;right:10px;animation-delay:.7s}
+.f3{bottom:70px;left:70px;animation-delay:1.2s}
+.f4{bottom:14px;right:155px;animation-delay:1.7s}
+
+@keyframes float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-14px)}
+}
+
+.section-title{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin:35px 0 16px;
+}
+
+.section-title h2{
+  margin:0;
+  color:var(--navy);
+  font-size:clamp(25px,3vw,38px);
+}
+
+.tabs{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin:12px 0 18px;
+}
+
+.tab{
+  border:1px solid rgba(7,31,73,.12);
+  background:#fff;
+  border-radius:999px;
+  padding:10px 16px;
+  font-weight:900;
+  cursor:pointer;
+  color:var(--navy);
+  font-family:inherit;
+}
+
+.tab.active{
+  background:linear-gradient(135deg,var(--navy),var(--blue));
+  color:#fff;
+}
+
+.lesson-panel{display:none}
+.lesson-panel.active{display:block}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.card{
+  background:rgba(255,255,255,.86);
+  backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,.9);
+  border-radius:28px;
+  box-shadow:var(--shadow);
+  padding:20px;
+  position:relative;
+  overflow:hidden;
+}
+
+.card::before{
+  content:"";
+  position:absolute;
+  inset:0 0 auto;
+  height:8px;
+  background:var(--c,var(--blue));
+}
+
+.prep{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+
+.word{
+  font-size:43px;
+  font-weight:1000;
+  color:var(--c,var(--blue));
+  direction:ltr;
+}
+
+.pill{
+  background:rgba(7,31,73,.06);
+  border-radius:14px;
+  padding:7px 12px;
+  font-weight:900;
+}
+
+.card p{
+  margin:10px 0;
+  color:#263b63;
+}
+
+.examples{
+  display:grid;
+  gap:8px;
+  margin-top:12px;
+}
+
+.ex{
+  direction:ltr;
+  text-align:left;
+  background:#fff;
+  border:1px solid rgba(7,31,73,.08);
+  border-radius:15px;
+  padding:9px 11px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  box-shadow:0 4px 10px rgba(7,31,73,.05);
+  font-weight:800;
+}
+
+.speak{
+  border:0;
+  background:linear-gradient(135deg,#eef7ff,#fff);
+  border-radius:12px;
+  padding:7px 10px;
+  cursor:pointer;
+  color:var(--navy);
+  box-shadow:0 3px 8px rgba(7,31,73,.08);
+}
+
+.map-list{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+}
+
+.mini-card{
+  border-radius:20px;
+  background:#fff;
+  box-shadow:var(--soft);
+  padding:14px;
+  border:1px solid rgba(7,31,73,.08);
+}
+
+.mini-card b{
+  color:var(--orange);
+  font-size:23px;
+  direction:ltr;
+  display:inline-block;
+}
+
+.rule{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+}
+
+.quiz{
+  display:grid;
+  grid-template-columns:.85fr 1.15fr;
+  gap:18px;
+}
+
+.quiz-box{min-height:390px}
+
+.progress{
+  height:12px;
+  background:rgba(7,31,73,.08);
+  border-radius:999px;
+  overflow:hidden;
+  margin:10px 0 18px;
+}
+
+.bar{
+  height:100%;
+  width:0;
+  background:linear-gradient(90deg,var(--green),var(--blue));
+  border-radius:inherit;
+  transition:.3s;
+}
+
+.q-title{
+  font-size:24px;
+  font-weight:1000;
+  color:var(--navy);
+  margin:0 0 12px;
+}
+
+.options{
+  display:grid;
+  gap:10px;
+}
+
+.option{
+  padding:13px 15px;
+  background:#fff;
+  border:2px solid rgba(7,31,73,.08);
+  border-radius:17px;
+  cursor:pointer;
+  font-weight:900;
+  transition:.2s;
+  text-align:right;
+  font-family:inherit;
+}
+
+.option:hover{
+  transform:translateX(-5px);
+  border-color:rgba(11,115,217,.35);
+}
+
+.option.correct{
+  background:#eaf9f0;
+  border-color:#1aa45a;
+}
+
+.option.wrong{
+  background:#fff0f0;
+  border-color:#e24a4a;
+}
+
+.feedback{
+  font-weight:900;
+  margin:14px 0;
+  color:var(--navy);
+  min-height:32px;
+}
+
+.score{
+  font-size:44px;
+  font-weight:1000;
+  color:var(--navy);
+  text-align:center;
+}
+
+.table{
+  width:100%;
+  border-collapse:separate;
+  border-spacing:0 9px;
+}
+
+.table td{
+  background:#fff;
+  padding:10px;
+  border-top:1px solid rgba(7,31,73,.08);
+  border-bottom:1px solid rgba(7,31,73,.08);
+}
+
+.table td:first-child{
+  border-radius:0 12px 12px 0;
+  border-right:1px solid rgba(7,31,73,.08);
+  font-weight:1000;
+  color:var(--navy);
+  direction:ltr;
+}
+
+.table td:last-child{
+  border-radius:12px 0 0 12px;
+  border-left:1px solid rgba(7,31,73,.08);
+}
+
+footer{
+  text-align:center;
+  margin:34px 0 16px;
+  color:var(--navy);
+  font-weight:1000;
+}
+
+.footer-card{
+  background:#fff;
+  border:1px solid rgba(7,31,73,.10);
+  border-radius:24px;
+  padding:18px;
+  box-shadow:var(--soft);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+  flex-wrap:wrap;
+}
+
+.small-logo{
+  width:64px;
+  height:64px;
+  border-radius:50%;
+  object-fit:cover;
+  padding:3px;
+  background:#fff;
+  border:2px solid var(--gold);
+}
+
+.print-note{
+  font-size:14px;
+  color:var(--muted);
+  font-weight:700;
+}
+
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr}
+  .stage{min-height:430px}
+  .orb.center{
+    position:relative;
+    inset:auto;
+    width:100%;
+    min-height:260px;
+  }
+  .floating{
+    position:relative;
+    display:inline-block;
+    margin:8px;
+  }
+  .grid,.map-list,.rule,.quiz{
+    grid-template-columns:1fr;
+  }
+  h1,.lead{text-align:center}
+  .brand,.actions{justify-content:center}
+  .section-title{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+}
+
+@media print{
+  .actions,.tabs,.quiz .card:first-child{display:none}
+  body{background:#fff}
+  .card{box-shadow:none;border:1px solid #ddd}
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<section class="hero" id="top">
+  <div>
+    <div class="brand">
+      <img src="assets/logo.png" class="logo" alt="شعار ملتقى التعليم التفاعلي">
+      <span class="badge">ملتقى التعليم التفاعلي</span>
+    </div>
+
+    <h1>تطبيق تفاعلي لحروف الجر في اللغة الإنجليزية</h1>
+    <p class="lead">
+      شرح واضح، أمثلة تُقرأ صوتيًا، تدريب لكل حرف، واختبار لكل فكرة؛
+      ليصبح التفريق بين <b>in</b> و <b>on</b> و <b>at</b> وبقية الحروف أسهل وأمتع.
+    </p>
+
+    <div class="actions">
+      <a class="btn primary" href="#lessons">ابدأ التعلم</a>
+      <a class="btn light" href="#quiz">ابدأ الاختبار</a>
+      <button class="btn light" onclick="window.print()">طباعة الملخص</button>
+    </div>
+  </div>
+
+  <div class="stage">
+    <div class="orb center">
+      <div class="mini">Prepositions</div>
+      <div class="big-prep" id="heroWord">in</div>
+      <div class="mini">مكان • زمان • مدة</div>
+    </div>
+    <div class="floating f1">on = سطح / يوم</div>
+    <div class="floating f2">at = نقطة محددة</div>
+    <div class="floating f3">for = لمدة</div>
+    <div class="floating f4">since = منذ</div>
+  </div>
+</section>
+
+<section id="lessons">
+  <div class="section-title">
+    <h2>أولًا: شرح حروف الجر حسب الفكرة</h2>
+    <span class="badge">اضغطي على المثال لسماعه</span>
+  </div>
+
+  <div class="tabs">
+    <button class="tab active" onclick="showPanel('places',this)">مع الأماكن</button>
+    <button class="tab" onclick="showPanel('times',this)">مع الأزمنة</button>
+    <button class="tab" onclick="showPanel('duration',this)">المدة والزمن</button>
+    <button class="tab" onclick="showPanel('around',this)">المكان حول الشيء</button>
+  </div>
+
+  <div id="places" class="lesson-panel active"></div>
+  <div id="times" class="lesson-panel"></div>
+  <div id="duration" class="lesson-panel"></div>
+  <div id="around" class="lesson-panel"></div>
+</section>
+
+<section id="rules">
+  <div class="section-title">
+    <h2>قاعدة سهلة للحفظ</h2>
+    <span class="badge">قاعدة مختصرة وسريعة</span>
+  </div>
+
+  <div class="rule">
+    <div class="card" style="--c:var(--green)">
+      <div class="prep">
+        <div class="word">in</div>
+        <div class="pill">داخل / واسع / زمن طويل</div>
+      </div>
+      <p>نستخدمها مع الأماكن الكبيرة، أو داخل الشيء، أو الشهور والسنوات والفصول.</p>
+    </div>
+
+    <div class="card" style="--c:var(--blue)">
+      <div class="prep">
+        <div class="word">on</div>
+        <div class="pill">سطح / أيام / تواريخ</div>
+      </div>
+      <p>نستخدمها مع السطح، الشوارع، الأيام، التواريخ، والمناسبات.</p>
+    </div>
+
+    <div class="card" style="--c:var(--orange)">
+      <div class="prep">
+        <div class="word">at</div>
+        <div class="pill">نقطة محددة</div>
+      </div>
+      <p>نستخدمها مع الوقت المحدد أو المكان المحدد أو نقطة واضحة.</p>
+    </div>
+  </div>
+</section>
+
+<section id="quiz">
+  <div class="section-title">
+    <h2>اختبار تفاعلي شامل</h2>
+    <span class="badge">لكل حرف ولكل فكرة</span>
+  </div>
+
+  <div class="quiz">
+    <div class="card">
+      <h3 style="margin-top:0;color:var(--navy)">اختاري نوع الاختبار</h3>
+      <div class="tabs">
+        <button class="tab active" onclick="startQuiz('all',this)">اختبار شامل</button>
+        <button class="tab" onclick="startQuiz('places',this)">الأماكن</button>
+        <button class="tab" onclick="startQuiz('times',this)">الأزمنة</button>
+        <button class="tab" onclick="startQuiz('duration',this)">المدة</button>
+        <button class="tab" onclick="startQuiz('around',this)">حول الشيء</button>
+      </div>
+
+      <table class="table">
+        <tr><td>in</td><td>داخل الشيء / مكان واسع / زمن طويل</td></tr>
+        <tr><td>on</td><td>سطح / أيام / تواريخ / شوارع</td></tr>
+        <tr><td>at</td><td>وقت محدد / مكان محدد</td></tr>
+        <tr><td>since</td><td>منذ بداية زمنية</td></tr>
+        <tr><td>for</td><td>لمدة زمنية كاملة</td></tr>
+        <tr><td>by</td><td>بحلول / في موعد أقصاه</td></tr>
+      </table>
+    </div>
+
+    <div class="card quiz-box">
+      <div class="progress"><div class="bar" id="bar"></div></div>
+      <div id="quizBox"></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-card">
+    <img src="assets/logo.png" class="small-logo" alt="شعار ملتقى التعليم التفاعلي">
+    <div>
+      <div>إعداد وتصميم: أ/ فاطمة هزازي</div>
+      <div class="print-note">ملتقى التعليم التفاعلي</div>
+    </div>
+  </div>
+</footer>
+
+</div>
+
+<script>
+const lessons = {
+  places:[
+    {word:"in",color:"var(--green)",rule:"للأماكن الكبيرة أو داخل الشيء",
+     explain:"نستخدم in مع القارات والدول والمدن، أو عندما يكون الشيء داخل مكان.",
+     examples:["in Asia","in Egypt","in Jeddah","in the bag"]},
+    {word:"on",color:"var(--green)",rule:"للشوارع أو على السطح",
+     explain:"نستخدم on مع الشوارع أو عندما يكون الشيء على سطح شيء آخر.",
+     examples:["on Tahlia Street","on the wall","on the chair","on the page"]},
+    {word:"at",color:"var(--green)",rule:"للمكان المحدد",
+     explain:"نستخدم at مع مكان محدد أو نقطة معروفة.",
+     examples:["at the hospital","at the airport","at the door","at the restaurant"]}
+  ],
+
+  times:[
+    {word:"in",color:"var(--blue)",rule:"للشهور والسنوات والفصول وأجزاء اليوم",
+     explain:"نستخدم in مع الشهور والسنوات والفصول وأجزاء اليوم.",
+     examples:["in January","in 2025","in winter","in the morning"]},
+    {word:"on",color:"var(--blue)",rule:"للأيام والتواريخ والمناسبات",
+     explain:"نستخدم on مع الأيام والتواريخ والمناسبات.",
+     examples:["on Monday","on March 5th","on Eid","on National Day"]},
+    {word:"at",color:"var(--blue)",rule:"للوقت المحدد",
+     explain:"نستخدم at مع الساعة أو الوقت المحدد.",
+     examples:["at 7:00 am","at sunrise","at lunchtime","at midnight"]}
+  ],
+
+  duration:[
+    {word:"since",color:"var(--purple)",rule:"منذ + بداية زمن",
+     explain:"نستخدم since عندما نذكر بداية زمنية محددة.",
+     examples:["since 2020","since yesterday","since last month","since morning"]},
+    {word:"for",color:"var(--purple)",rule:"لمدة + فترة كاملة",
+     explain:"نستخدم for عندما نذكر مدة كاملة.",
+     examples:["for one hour","for three days","for a week","for many years"]},
+    {word:"by",color:"var(--purple)",rule:"بحلول / في موعد أقصاه",
+     explain:"نستخدم by عندما نقصد قبل وقت محدد أو في موعد أقصاه.",
+     examples:["by tomorrow","by 8 o’clock","by next month","by the end of the day"]},
+    {word:"in",color:"var(--purple)",rule:"بعد مدة قادمة",
+     explain:"نستخدم in أحيانًا بمعنى بعد مدة قادمة.",
+     examples:["in two hours","in a week","in ten minutes","in a few days"]}
+  ],
+
+  around:[
+    {word:"inside",color:"var(--orange)",rule:"داخل",explain:"داخل الشيء أو المكان.",examples:["inside the room","inside the box"]},
+    {word:"outside",color:"var(--orange)",rule:"خارج",explain:"خارج المكان.",examples:["outside the house","outside the school"]},
+    {word:"beside",color:"var(--orange)",rule:"بجانب",explain:"بجانب الشيء.",examples:["beside the teacher","beside the door"]},
+    {word:"next to",color:"var(--orange)",rule:"بجانب مباشرة",explain:"ملاصق أو بجانب مباشرة.",examples:["next to the school","next to my friend"]},
+    {word:"near",color:"var(--orange)",rule:"قريب من",explain:"قريب من الشيء وليس ملاصقًا له.",examples:["near the mosque","near the window"]},
+    {word:"above",color:"var(--orange)",rule:"فوق",explain:"فوق الشيء دون ملامسة غالبًا.",examples:["above the board","above the clouds"]},
+    {word:"below",color:"var(--orange)",rule:"أسفل",explain:"أسفل الشيء.",examples:["below the picture","below the line"]},
+    {word:"under",color:"var(--orange)",rule:"تحت",explain:"تحت الشيء وقد يكون قريبًا منه.",examples:["under the desk","under the tree"]},
+    {word:"between",color:"var(--orange)",rule:"بين",explain:"بين شيئين أو أكثر.",examples:["between two chairs","between Riyadh and Jeddah"]}
+  ]
+};
+
+const questions = [
+  {cat:"places",q:"نستخدم ___ مع الدول والمدن.",a:"in",o:["in","on","at"]},
+  {cat:"places",q:"The book is ___ the table.",a:"on",o:["in","on","at"]},
+  {cat:"places",q:"She is ___ the airport.",a:"at",o:["at","on","since"]},
+  {cat:"places",q:"The pencil is ___ the bag.",a:"in",o:["in","by","on"]},
+
+  {cat:"times",q:"I was born ___ 2025.",a:"in",o:["in","on","at"]},
+  {cat:"times",q:"The exam is ___ Monday.",a:"on",o:["in","on","at"]},
+  {cat:"times",q:"The class starts ___ 7:00 am.",a:"at",o:["at","in","for"]},
+  {cat:"times",q:"We travel ___ Eid.",a:"on",o:["on","in","by"]},
+
+  {cat:"duration",q:"I have studied English ___ 2020.",a:"since",o:["since","for","by"]},
+  {cat:"duration",q:"She waited ___ one hour.",a:"for",o:["for","since","at"]},
+  {cat:"duration",q:"Finish your homework ___ tomorrow.",a:"by",o:["by","for","in"]},
+  {cat:"duration",q:"The meeting starts ___ two hours.",a:"in",o:["in","on","since"]},
+
+  {cat:"around",q:"The cat is ___ the table. معنى: تحت",a:"under",o:["under","above","near"]},
+  {cat:"around",q:"The school is ___ the mosque. معنى: قريب من",a:"near",o:["near","inside","between"]},
+  {cat:"around",q:"The ball is ___ the box. معنى: داخل",a:"inside",o:["inside","outside","below"]},
+  {cat:"around",q:"The teacher is ___ two students. معنى: بين",a:"between",o:["between","above","next to"]}
+];
+
+let quizList = [];
+let current = 0;
+let score = 0;
+
+function speak(text){
+  if(!("speechSynthesis" in window)){
+    alert("الصوت غير مدعوم في هذا المتصفح");
+    return;
+  }
+  speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = "en-US";
+  u.rate = .85;
+  speechSynthesis.speak(u);
+}
+
+function renderLessons(){
+  Object.keys(lessons).forEach(cat=>{
+    const panel = document.getElementById(cat);
+    const list = lessons[cat];
+
+    if(cat === "around"){
+      panel.innerHTML = `<div class="map-list">` + list.map(item=>`
+        <div class="mini-card">
+          <b>${item.word}</b> = ${item.rule}
+          <p>${item.explain}</p>
+          ${item.examples.map(e=>`
+            <div class="ex">
+              <span>${e}</span>
+              <button class="speak" onclick="speak('${e}')">🔊</button>
+            </div>
+          `).join("")}
+        </div>
+      `).join("") + `</div>`;
+      return;
+    }
+
+    panel.innerHTML = `<div class="grid">` + list.map(item=>`
+      <div class="card" style="--c:${item.color}">
+        <div class="prep">
+          <div class="word">${item.word}</div>
+          <div class="pill">${item.rule}</div>
+        </div>
+        <p>${item.explain}</p>
+        <div class="examples">
+          ${item.examples.map(e=>`
+            <div class="ex">
+              <span>${e}</span>
+              <button class="speak" onclick="speak('${e}')">🔊</button>
+            </div>
+          `).join("")}
+        </div>
+      </div>
+    `).join("") + `</div>`;
+  });
+}
+
+function showPanel(id,btn){
+  document.querySelectorAll(".lesson-panel").forEach(p=>p.classList.remove("active"));
+  document.getElementById(id).classList.add("active");
+  btn.parentElement.querySelectorAll(".tab").forEach(t=>t.classList.remove("active"));
+  btn.classList.add("active");
+}
+
+function startQuiz(cat="all",btn=null){
+  if(btn){
+    btn.parentElement.querySelectorAll(".tab").forEach(t=>t.classList.remove("active"));
+    btn.classList.add("active");
+  }
+
+  quizList = cat === "all" ? [...questions] : questions.filter(x=>x.cat === cat);
+  quizList = quizList.sort(()=>Math.random() - .5);
+  current = 0;
+  score = 0;
+  showQuestion();
+}
+
+function showQuestion(){
+  const box = document.getElementById("quizBox");
+  const bar = document.getElementById("bar");
+
+  bar.style.width = ((current / quizList.length) * 100) + "%";
+
+  if(current >= quizList.length){
+    bar.style.width = "100%";
+    box.innerHTML = `
+      <div class="score">${score} / ${quizList.length}</div>
+      <p style="text-align:center;font-weight:900">أحسنتِ! اكتمل الاختبار.</p>
+      <div style="text-align:center">
+        <button class="btn primary" onclick="startQuiz('all')">إعادة الاختبار</button>
+      </div>
+    `;
+    return;
+  }
+
+  const item = quizList[current];
+
+  box.innerHTML = `
+    <div class="q-title">السؤال ${current + 1}: ${item.q}</div>
+    <div class="options">
+      ${item.o.map(op=>`
+        <button class="option" onclick="checkAnswer(this,'${op}','${item.a}')">${op}</button>
+      `).join("")}
+    </div>
+    <div class="feedback" id="feedback"></div>
+  `;
+}
+
+function checkAnswer(btn,choice,answer){
+  const options = document.querySelectorAll(".option");
+  options.forEach(o=>o.disabled = true);
+
+  if(choice === answer){
+    btn.classList.add("correct");
+    score++;
+    document.getElementById("feedback").textContent = "إجابة صحيحة 🌟";
+  }else{
+    btn.classList.add("wrong");
+    options.forEach(o=>{
+      if(o.textContent === answer) o.classList.add("correct");
+    });
+    document.getElementById("feedback").textContent = "الإجابة الصحيحة هي: " + answer;
+  }
+
+  setTimeout(()=>{
+    current++;
+    showQuestion();
+  },1100);
+}
+
+const words = ["in","on","at","for","since","by"];
+let i = 0;
+
+setInterval(()=>{
+  i = (i + 1) % words.length;
+  document.getElementById("heroWord").textContent = words[i];
+},1600);
+
+renderLessons();
+startQuiz("all");
+</script>
+
+</body>
+</html>
